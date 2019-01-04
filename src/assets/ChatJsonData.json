@@ -1,0 +1,39 @@
+{
+  "Private": [
+    {
+      "Name": "Nimisha Salian",
+      "Status": "Online",
+      "time": "12:05",
+      "Data": "Hey",
+      "Icon": "fa fa-venus"
+    },
+    {
+      "Name": "Manoj Shinde",
+      "Status": "Offline",
+      "time": "12:10",
+      "Data": "Hey! I'm learning HTML/CSS",
+      "Icon": "fa fa-mars"
+    },
+    {
+      "Name": "Vicky Pal",
+      "Status": "Online",
+      "time": "12:20",
+      "Data": "Helloo",
+      "Icon": "fa fa-mars"
+    }
+  ],
+  "Group": [
+    {
+      "GName": "GCO Eurpe",
+      "time": "12:05",
+      "Data": "Nimisha: Hi",
+      "Icon": "fa fa-venus"
+    },
+    {
+      "GName": "GCO Global",
+      "time": "12:10",
+      "Data": "Manoj: Hi",
+      "Icon": "fa fa-mars"
+    }
+  ]
+}

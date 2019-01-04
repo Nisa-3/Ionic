@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title PaddingSet><h2><b style="float:left;padding: 0px 30px;">Chats</b></h2></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<div class="MainContainer">
+  <ion-card *ngFor="let item of items">
+    <ion-card-header>
+      <!-- <ion-card-subtitle>Card Subtitle {{ item.Name }}</ion-card-subtitle> -->
+      <ion-card-title><span style="float:left;"><ion-icon name="contact" size="large" strong></ion-icon>{{ item.Name }}</span><span style="float:right;font-size: 20px;"> {{ item.time }}</span>  </ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     {{ item.Data }}
+    </ion-card-content>
+  </ion-card>
+
+</div>
+</ion-content>

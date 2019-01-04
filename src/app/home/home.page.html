@@ -1,12 +1,25 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>
       Ionic Blank
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://beta.ionicframework.com/docs/">docs</a> will be your guide.</p>
+<ion-content padding >  
+  <img align="center"  src="http://railsgirls.com/images/buenosaires/Google.png" alt="TestImage">
+  <form #LoginForm ="ngForm" >
+      <ion-list>
+          <ion-item>
+            <ion-label stacked>User name</ion-label>
+            <ion-input type="text"  aria-required="true"  name="username" [(ngModel)]="model.username"  ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked>Password</ion-label>
+            <ion-input type="password" aria-required="true" name="password"  [(ngModel)]="model.password" ></ion-input>
+          </ion-item>
+         </ion-list>
+        <ion-button expand="full"  color="primary" size="large" (click)="login()"  >Login</ion-button>
+  </form>
+
 </ion-content>

@@ -6,7 +6,8 @@ export const ChatJson = [{
         'time': '12:05',
         'Data': 'Hey',
         'Icon': 'fa fa-venus',
-        'Count': '3'
+        'Count': '3',
+        'color': '#7efaff'
       },
       {
         'Name': 'Manoj Shinde',
@@ -14,14 +15,16 @@ export const ChatJson = [{
         'time': '12:10',
         'Data': 'Hey! Im learning HTML/CSS',
         'Icon': 'fa fa-mars',
-        'Count': '2'
+        'Count': '2',
+        'color': '#c6e377'
       },
       {
         'Name': 'Vicky Pal',
         'Status': 'Online',
         'time': '12:20',
         'Data': 'Helloo',
-        'Icon': 'fa fa-mars'
+        'Icon': 'fa fa-mars',
+        'color': '#f7931e'
       }
     ],
     'Group': [

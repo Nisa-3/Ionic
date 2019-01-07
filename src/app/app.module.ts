@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {Validators, FormsModule, ReactiveFormsModule  } from '@angular/forms';
+// import { ChatInnerpageComponent } from './pages/Chat/chat-innerpage/chat-innerpage.component';
 
 @NgModule({
   declarations: [AppComponent],

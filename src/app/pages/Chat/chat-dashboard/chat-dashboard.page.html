@@ -1,21 +1,88 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title PaddingSet><h2><b style="float:left;padding: 0px 30px;">Chats</b></h2></ion-title>
+   <h2><b class="PaddingSet" >Chats</b></h2>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 <div class="MainContainer">
-  <ion-card *ngFor="let item of items">
-    <ion-card-header>
-      <!-- <ion-card-subtitle>Card Subtitle {{ item.Name }}</ion-card-subtitle> -->
-      <ion-card-title><span style="float:left;"><ion-icon name="contact" size="large" strong></ion-icon>{{ item.Name }}</span><span style="float:right;font-size: 20px;"> {{ item.time }}</span>  </ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-     {{ item.Data }}
-    </ion-card-content>
-  </ion-card>
+
+  <div class="Header">
+      <ion-button size="small" color="light" (click)="PrivateClick()" ><b>Private</b></ion-button> <ion-button size="small" color="light" (click)="GroupClick()"><b>Group</b></ion-button>
+  </div>
+  <div *ngIf="private">
+      <ion-card *ngFor="let item of itemsPrivate">
+          <ion-card-header>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3">
+                  <ion-icon name="contact"  size="large" strong [ngStyle]="{'color': item.color }"></ion-icon>
+                </ion-col>
+                <ion-col size="9">
+                  <ion-card-title><span class="Align-left HeaderFontSize" >{{ item.Name }}</span><span  class="Align-right HeaderFontSize"> {{ item.time }}</span>  </ion-card-title>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size = "3">
+      
+                </ion-col>
+                <ion-col size = "7" class="ContentFontSize" (click)="GoToInnerPage(item.Name)">
+                    {{ item.Data }}         
+                </ion-col>
+                <ion-col size = "2" class="Align-center" (click)="GoToInnerPage(item.Name)">
+                    <ion-badge color="success">{{ item.Count }}</ion-badge>
+                  </ion-col>
+              </ion-row>
+            </ion-grid>
+           
+          </ion-card-content>
+        </ion-card>
+  </div>
+
+
+
+
+  <div *ngIf="group">
+      <ion-card *ngFor="let item of itemsGroup">
+          <ion-card-header>
+            <!-- <ion-card-subtitle>Card Subtitle {{ item.Name }}</ion-card-subtitle> <ion-icon name="contact" size="large" strong></ion-icon>-->
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3">
+                  <ion-icon name="contact" size="large" strong [ngStyle]="{'color': item.color }"></ion-icon>
+                </ion-col>
+                <ion-col size="9">
+                  <ion-card-title><span class="Align-left HeaderFontSize">{{ item.GName }}</span><span  class="Align-right HeaderFontSize"> {{ item.time }}</span>  </ion-card-title>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col size = "3">
+      
+                </ion-col>
+                <ion-col size = "7" class="ContentFontSize">
+                    {{ item.Data }}         
+                </ion-col>
+                <ion-col size = "2" class="Align-center">
+                    <ion-badge color="success">{{ item.Count }}</ion-badge>
+                  </ion-col>
+              </ion-row>
+            </ion-grid>
+           
+          </ion-card-content>
+        </ion-card>
+  </div>
+
 
 </div>
+
 </ion-content>

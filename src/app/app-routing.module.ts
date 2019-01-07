@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule' },
   { path: 'chat-dashboard', loadChildren: './pages/Chat/chat-dashboard/chat-dashboard.module#ChatDashboardPageModule' },
+  { path: 'chat-innerpage', loadChildren: './pages/Chat/chat-innerpage/chat-innerpage.module#ChatInnerpagePageModule' },
 ];
 
 @NgModule({

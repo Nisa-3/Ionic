@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ChatJson } from './ChatJson';
+// import { NavController } from '@ionic/angular';
+ import { NavController  } from '@ionic/angular';
+ // import { ChatInnerpagePage } from './../';
+// import { ChatInnerpagePage  } from './../chat-innerpage/chat-innerpage.page';
 
 @Component({
   selector: 'app-chat-dashboard',
@@ -8,15 +12,31 @@ import { ChatJson } from './ChatJson';
   styleUrls: ['./chat-dashboard.page.scss'],
 })
 export class ChatDashboardPage implements OnInit {
-  items: any[] = ChatJson[0].Private;
-  constructor(private http: HttpClient) { }
+  itemsPrivate: any[] = ChatJson[0].Private;
+  itemsGroup: any[] = ChatJson[0].Group;
+  isActiveP = true;
+  isActiveG = true;
+  private = true;
+  group = false;
+  @ViewChild('myNav') nav: NavController;
+  constructor(private http: HttpClient, private navCtrl: NavController) { }
 
   ngOnInit() {
-    console.log(this.items[0].Group[0].GName);
-    // this.http.get('http://localhost:8100/assets/ChartJsonData.json').subscribe( Response => {
-    // console.log(Response) ;
-    // // this.items = Response;
-    // });
+
+  }
+    PrivateClick() {
+    this.group = false;
+    this.private = !this.private;
+  }
+  GroupClick() {
+    this.private = false;
+    this.group = !this.group;
+  }
+  GoToInnerPage(value: any) {
+    // console.log(value);
+     // this.navCtrl.push(ChatInnerpagePage, {data: value});
+    // this.navCtrl.navigateForward(innerpage,{ data: value } );
+     this.navCtrl.navigateForward('/chat-innerpage');
   }
 
 }

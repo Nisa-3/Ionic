@@ -10,7 +10,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {Validators, FormsModule, ReactiveFormsModule  } from '@angular/forms';
 // import { ChatInnerpageComponent } from './pages/Chat/chat-innerpage/chat-innerpage.component';
-
+import { DatePipe } from '@angular/common';
+import {ServiceService} from '../app/_services/service.service';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -18,7 +19,9 @@ import {Validators, FormsModule, ReactiveFormsModule  } from '@angular/forms';
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    DatePipe,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ServiceService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,22 +1,86 @@
 <ion-header>
   <ion-toolbar>
       <ion-buttons slot="start"> <ion-back-button defaultHref="chat-dashboard"></ion-back-button> </ion-buttons>
-    <ion-title>Inner page</ion-title>
+    <ion-title>{{ serviceService['forwardURL']['Name']}}</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content  padding>
+  <div style="width:70%;">
+<p style="overflow-wrap: break-word; background: white; border-radius: 25px;padding: 10px;" class="ContentFontSize">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.  <span class="timeCSS">12:34</span>
+</p>
+  </div>
+  <div style="float:right;width:70%;">
+    <span *ngFor="let item of ParseJSONArray" >
+        <p *ngIf="item.id === 6"  style="overflow-wrap: break-word;border: 1px solid #28e070; background: #28e070; border-radius: 25px;padding: 10px;" class="ContentFontSize">
+            {{ item.message }} <span class="timeCSS"> {{ item.time }}</span>
+        </p>
+      </span>  
+    
+  </div>
 
-<ion-content padding>
+</ion-content>
+<!-- <ion-content padding>
 <ion-card>
   <ion-content >
-
+    <div style="width: 100%;">
+      <div style="float: left;">
+          <ion-input clearInput type="text"></ion-input> 
+      </div>
+        <div class="float:right;">
+            <ion-input clearInput type="text"></ion-input> 
+        </div>
+    </div>
+    
+    
   </ion-content>
 </ion-card>
-</ion-content>
+</ion-content> -->
+<!-- <br> -->
+
+<!-- <ion-card *ngFor="let item of ChatData">
+    <ion-card-header>
+     Nimisha
+    </ion-card-header>
+    <ion-card-content>
+      {{ item.value }}
+    </ion-card-content>
+  </ion-card>  -->
+
+
+  <!-- <ion-list *ngFor="let item of ChatData" >
+      <ion-item >
+                <ion-label>
+                 
+                    <h3> {{ item.value }}</h3>
+                  </ion-label>
+       </ion-item>
+      
+    </ion-list> -->
+
+
+
+
+
+  <!-- <div *ngFor="let item of ChatData">
+    	<div class="msg_cotainer_send">
+          {{ item.value }}
+          <span class="msg_time_send">8:55 AM, Today</span>
+        </div>
+  </div> -->
+
+    <!-- <div style="width: 100%;">
+        <div style="float: left;">
+           sdsadsadsa
+        </div>
+          <div class="float:right;">
+            dsadsadsadsadsad
+      </div> -->
 <ion-footer>
     <!-- <ion-toolbar>
        <ion-input placeholder="Enter Input"></ion-input>
-      </ion-toolbar> -->
+      </ion-toolbar>  <ion-icon name="send" strong (click)="send()" ></ion-icon> -->
       <ion-item class="InputBorderTop">        
-          <ion-input clearInput type="text"></ion-input> <ion-label> <ion-icon name="send" strong></ion-icon></ion-label>
+          <ion-input clearInput type="text" id="InputText" name="InputText" [(ngModel)]="model.InputText"></ion-input> <ion-label> <ion-button (click)="send()" > <b> Send </b> </ion-button> </ion-label>
        </ion-item>
 </ion-footer>

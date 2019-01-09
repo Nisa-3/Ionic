@@ -30,12 +30,13 @@
                   <ion-avatar item-start>
                       <img src="{{ item.img }}" width="50" height="50">
                     </ion-avatar>
-                    <ion-label class="marginleftCSS">
+                    <ion-label class="marginleftCSS" >
                         <h2 ><b class="Align-left">{{ item.Name }}</b> <span  class="Align-right ContentFontSize"> {{ item.time }}</span></h2>
                         <br>
-                        <h3 class="ContentFontSize" (click)="GoToInnerPage(item.Name)">{{ item.Data }} <span class="Align-right" > <ion-badge (click)="GoToInnerPage(item.Name)" color="success">{{ item.Count }}</ion-badge></span></h3>
+                        <h3 class="ContentFontSize" (click)="GoToInnerPage(item)" >{{ item.Data }}<span class="Align-right" > <ion-badge (click)="GoToInnerPage(item)" color="success">{{ item.Count }}</ion-badge></span></h3>
                       </ion-label>
            </ion-item>
+          
         </ion-list>
 
       

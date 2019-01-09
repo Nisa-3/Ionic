@@ -46,6 +46,7 @@ export class ChatDashboardPage implements OnInit {
     this.isActiveP = false;
     this.private = false;
     this.group = !this.group;
+    
   }
   GoToInnerPage(value) {
     // console.log(value);

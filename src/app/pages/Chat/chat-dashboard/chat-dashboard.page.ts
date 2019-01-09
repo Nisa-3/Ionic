@@ -3,8 +3,12 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ChatJson } from './ChatJson';
 // import { NavController } from '@ionic/angular';
  import { NavController  } from '@ionic/angular';
+ import { Router } from '@angular/router';
+
  // import { ChatInnerpagePage } from './../';
 // import { ChatInnerpagePage  } from './../chat-innerpage/chat-innerpage.page';
+
+
 
 @Component({
   selector: 'app-chat-dashboard',
@@ -12,23 +16,32 @@ import { ChatJson } from './ChatJson';
   styleUrls: ['./chat-dashboard.page.scss'],
 })
 export class ChatDashboardPage implements OnInit {
+  BaseUrl: any;
   itemsPrivate: any[] = ChatJson[0].Private;
   itemsGroup: any[] = ChatJson[0].Group;
   isActiveP = true;
-  isActiveG = true;
+  isActiveG = false;
   private = true;
   group = false;
   @ViewChild('myNav') nav: NavController;
-  constructor(private http: HttpClient, private navCtrl: NavController) { }
+  constructor(private http: HttpClient, private navCtrl: NavController, private  route: Router) { }
 
   ngOnInit() {
 
   }
     PrivateClick() {
+      console.log('Active P' + this.isActiveP  );
+      console.log('Active G' + this.isActiveG  );
+      this.isActiveP = true;
+      this.isActiveG = false;
+      console.log('Active P1' + this.isActiveP  );
+      console.log('Active G1' + this.isActiveG  );
     this.group = false;
     this.private = !this.private;
   }
   GroupClick() {
+    this.isActiveG = true;
+    this.isActiveP = false;
     this.private = false;
     this.group = !this.group;
   }
@@ -36,7 +49,10 @@ export class ChatDashboardPage implements OnInit {
     // console.log(value);
      // this.navCtrl.push(ChatInnerpagePage, {data: value});
     // this.navCtrl.navigateForward(innerpage,{ data: value } );
-     this.navCtrl.navigateForward('/chat-innerpage');
+    // this.BaseUrl = 'http://localhost:8100/';
+    // const path = '/chat-innerpage/'  + value;
+   // this.route.navigate([path]);
+   //  this.navCtrl.navigateForward('/chat-innerpage', {  value : value} );
   }
 
 }

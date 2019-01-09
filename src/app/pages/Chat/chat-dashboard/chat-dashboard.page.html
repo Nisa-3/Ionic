@@ -4,85 +4,68 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<div class="MainContainer">
+<ion-content class="MainContainer">
+<div >
 
-  <div class="Header">
-      <ion-button size="small" color="light" (click)="PrivateClick()" ><b>Private</b></ion-button> <ion-button size="small" color="light" (click)="GroupClick()"><b>Group</b></ion-button>
-  </div>
-  <div *ngIf="private">
-      <ion-card *ngFor="let item of itemsPrivate">
-          <ion-card-header>
-            <ion-grid>
-              <ion-row>
-                <ion-col size="3">
-                  <ion-icon name="contact"  size="large" strong [ngStyle]="{'color': item.color }"></ion-icon>
-                </ion-col>
-                <ion-col size="9">
-                  <ion-card-title><span class="Align-left HeaderFontSize" >{{ item.Name }}</span><span  class="Align-right HeaderFontSize"> {{ item.time }}</span>  </ion-card-title>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col size = "3">
+    <div class="Tabs">
+      <table width="100%">
+        <tbody>
+          <tr class="trBottom">
+            <td class="Align-center tdHeight" [ngStyle]="{ 'border-bottom' : isActiveP ? '5px solid #951555' : 'white'  }"  >
+                <a size="small" (click)="PrivateClick()"  class="CursorCSS"><b class="TabsColorCode">Private</b></a>
+            </td>
+            <td class="divider Align-center" [ngStyle]="{ 'border-bottom' : isActiveG ? '5px solid #951555' : 'white'  }">
+                <a size="small"  (click)="GroupClick()" class="CursorCSS"><b class="TabsColorCode">Group</b></a>    
+              </td>
+          </tr>
+        </tbody>
+      </table>
+         
+      </div>
+ 
+  <div *ngIf="private" class="marginTopCSS">
+
+      <ion-list *ngFor="let item of itemsPrivate" class="contentbox">
+          <ion-item class="RemoveBorderBottom">
+                  <ion-avatar item-start>
+                      <img src="{{ item.img }}" width="50" height="50">
+                    </ion-avatar>
+                    <ion-label class="marginleftCSS">
+                        <h2 ><b class="Align-left">{{ item.Name }}</b> <span  class="Align-right ContentFontSize"> {{ item.time }}</span></h2>
+                        <br>
+                        <h3 class="ContentFontSize" (click)="GoToInnerPage(item.Name)">{{ item.Data }} <span class="Align-right" > <ion-badge (click)="GoToInnerPage(item.Name)" color="success">{{ item.Count }}</ion-badge></span></h3>
+                      </ion-label>
+           </ion-item>
+        </ion-list>
+
       
-                </ion-col>
-                <ion-col size = "7" class="ContentFontSize" (click)="GoToInnerPage(item.Name)">
-                    {{ item.Data }}         
-                </ion-col>
-                <ion-col size = "2" class="Align-center" (click)="GoToInnerPage(item.Name)">
-                    <ion-badge color="success">{{ item.Count }}</ion-badge>
-                  </ion-col>
-              </ion-row>
-            </ion-grid>
-           
-          </ion-card-content>
-        </ion-card>
   </div>
 
 
 
 
-  <div *ngIf="group">
-      <ion-card *ngFor="let item of itemsGroup">
-          <ion-card-header>
-            <!-- <ion-card-subtitle>Card Subtitle {{ item.Name }}</ion-card-subtitle> <ion-icon name="contact" size="large" strong></ion-icon>-->
-            <ion-grid>
-              <ion-row>
-                <ion-col size="3">
-                  <ion-icon name="contact" size="large" strong [ngStyle]="{'color': item.color }"></ion-icon>
-                </ion-col>
-                <ion-col size="9">
-                  <ion-card-title><span class="Align-left HeaderFontSize">{{ item.GName }}</span><span  class="Align-right HeaderFontSize"> {{ item.time }}</span>  </ion-card-title>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-header>
-        
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col size = "3">
+  <div *ngIf="group" class="MainContainer marginTopCSS">
       
-                </ion-col>
-                <ion-col size = "7" class="ContentFontSize">
-                    {{ item.Data }}         
-                </ion-col>
-                <ion-col size = "2" class="Align-center">
-                    <ion-badge color="success">{{ item.Count }}</ion-badge>
-                  </ion-col>
-              </ion-row>
-            </ion-grid>
-           
-          </ion-card-content>
-        </ion-card>
+           <ion-list *ngFor="let item of itemsGroup" class="contentbox">
+              <ion-item class="RemoveBorderBottom">
+                      <ion-avatar item-start>
+                          <img src="{{ item.Icon }}" width="50" height="50">
+                        </ion-avatar>
+                        <ion-label class="marginleftCSS">
+                            <h2 ><b class="Align-left">{{ item.GName }}</b> <span  class="Align-right ContentFontSize"> {{ item.time }}</span></h2>
+                            <br>
+                            <h3 class="ContentFontSize">{{ item.Data }} <span class="Align-right"> <ion-badge  color="success" (click)="GoToInnerPage(item.Name)" >{{ item.Count }}</ion-badge></span></h3>
+                          </ion-label>
+               </ion-item>
+            </ion-list>
+   
   </div>
 
 
 </div>
 
+
 </ion-content>
+
+  
+

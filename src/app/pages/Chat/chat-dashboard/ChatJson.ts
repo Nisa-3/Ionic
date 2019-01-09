@@ -7,7 +7,8 @@ export const ChatJson = [{
         'Data': 'Hey',
         'Icon': 'fa fa-venus',
         'Count': '3',
-        'color': '#7efaff'
+        'color': '#7efaff',
+        'img' : 'assets/download.jpg',
       },
       {
         'Name': 'Manoj Shinde',
@@ -16,7 +17,8 @@ export const ChatJson = [{
         'Data': 'Hey! Im learning HTML/CSS',
         'Icon': 'fa fa-mars',
         'Count': '2',
-        'color': '#c6e377'
+        'color': '#c6e377',
+        'img' : 'assets/AvatarMale.jpg',
       },
       {
         'Name': 'Vicky Pal',
@@ -24,7 +26,8 @@ export const ChatJson = [{
         'time': '12:20',
         'Data': 'Helloo',
         'Icon': 'fa fa-mars',
-        'color': '#f7931e'
+        'color': '#f7931e',
+        'img' : 'assets/download1.png',
       }
     ],
     'Group': [
@@ -32,13 +35,13 @@ export const ChatJson = [{
         'GName': 'GCO Eurpe',
         'time': '12:05',
         'Data': 'Nimisha: Hi',
-        'Icon': 'fa fa-venus'
+        'Icon': 'assets/Group1.jpg'
       },
       {
         'GName': 'GCO Global',
         'time': '12:10',
         'Data': 'Manoj: Hi',
-        'Icon': 'fa fa-mars'
+        'Icon': 'assets/group2.png'
       }
     ]
   }];

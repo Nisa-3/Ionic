@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start"> <ion-back-button defaultHref="dashboard"></ion-back-button> </ion-buttons>
+    <ion-title>Photogallery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<div>
+  <ion-row>
+    <ion-col *ngFor="let item of ImageGallery">
+      <div class="Title">
+          <img src="{{  item.LogoIcon_ImgPath }}" width="100"  >
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-button (click)="CaptureImage()"> Take Photo </ion-button>
+  </ion-row>
+  <ion-row>
+    <img src="{{ photo }}">
+  </ion-row>
+</div>
+</ion-content>

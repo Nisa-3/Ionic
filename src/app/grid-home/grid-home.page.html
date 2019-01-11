@@ -1,0 +1,31 @@
+
+
+<ion-header>
+  <ion-toolbar>
+        <ion-buttons slot="start"> <ion-back-button defaultHref="dashboard"></ion-back-button> </ion-buttons>
+        <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="Background">
+          <div class="margintopCSS"></div>
+          <h1 class="Align-center">User Related</h1>
+          <ion-row>
+              <ion-col *ngFor="let item of arrayUser" class="main-container"> <div class="InnerPadding" >
+                  <div class="Title">
+                      <img src="{{ item.LogoIcon_ImgPath}}" width="100" >
+                  </div>
+                <p class="Align-center"><b>{{ item.ModuleName }}</b>  </p>
+              </div></ion-col> 
+          </ion-row>
+
+          <div class="margintopCSS"> </div>
+          <h1 class="Align-center">Module Related</h1>
+          <ion-row>
+              <ion-col *ngFor="let item of arrayModule" class="main-container"> <div class="InnerPadding" >
+                  <div class="Title">
+                      <img src="{{ item.LogoIcon_ImgPath}}" width="100" >
+                  </div>
+                <p class="Align-center"><b>{{ item.ModuleName }}</b>  </p>
+              </div></ion-col> 
+          </ion-row>
+</ion-content>

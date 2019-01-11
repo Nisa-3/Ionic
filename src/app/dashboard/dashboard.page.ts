@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NavController  } from '@ionic/angular';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.page.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
   }
-
+  Chat() {
+    this.navController.navigateForward('/chat-dashboard');
+  }
+  GridHome() {
+    this.navController.navigateForward('/grid-home');
+  }
+  ShowPhotoGallery() {
+    this.navController.navigateForward('/photogallery');
+  }
 }

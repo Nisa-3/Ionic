@@ -12,6 +12,7 @@ import {Validators, FormsModule, ReactiveFormsModule  } from '@angular/forms';
 // import { ChatInnerpageComponent } from './pages/Chat/chat-innerpage/chat-innerpage.component';
 import { DatePipe } from '@angular/common';
 import {ServiceService} from '../app/_services/service.service';
+import { Camera } from '@ionic-native/camera/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +22,8 @@ import {ServiceService} from '../app/_services/service.service';
     SplashScreen,
     DatePipe,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    ServiceService
+    ServiceService,
+    Camera
   ],
   bootstrap: [AppComponent]
 })

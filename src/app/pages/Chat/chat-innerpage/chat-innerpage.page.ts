@@ -16,7 +16,7 @@ export class ChatInnerpagePage implements OnInit {
   HeaderStr: string;
   model: any = {};
   ChatData: Array <{  id: number, Name: string, message: string, time: string }> = [];
-  constructor(private route: ActivatedRoute, public datepipe: DatePipe, public serviceService : ServiceService) {
+  constructor(private route: ActivatedRoute, public datepipe: DatePipe, public serviceService: ServiceService) {
     this.HeaderStr =  this.route.snapshot.paramMap.get('value');
    // this.value = navParams.get('data');
      console.log(this.HeaderStr);

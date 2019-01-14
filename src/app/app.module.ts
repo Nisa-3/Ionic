@@ -13,6 +13,8 @@ import {Validators, FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import {ServiceService} from '../app/_services/service.service';
 import { Camera } from '@ionic-native/camera/ngx';
+// import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { PhotoViewer  } from '@ionic-native/photo-viewer/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -23,7 +25,8 @@ import { Camera } from '@ionic-native/camera/ngx';
     DatePipe,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ServiceService,
-    Camera
+    Camera,
+    PhotoViewer
   ],
   bootstrap: [AppComponent]
 })

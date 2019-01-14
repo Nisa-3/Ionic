@@ -10,7 +10,7 @@
   <ion-row>
     <ion-col *ngFor="let item of ImageGallery">
       <div class="Title">
-          <img src="{{  item.LogoIcon_ImgPath }}" width="100"  >
+          <img src="{{  item.LogoIcon_ImgPath }}" width="100"  (click)="show(item.LogoIcon_ImgPath)" >
       </div>
     </ion-col>
   </ion-row>
@@ -18,7 +18,7 @@
     <ion-button (click)="CaptureImage()"> Take Photo </ion-button>
   </ion-row>
   <ion-row>
-    <img src="{{ photo }}">
+    <img src="{{ photo }}" >
   </ion-row>
 </div>
 </ion-content>

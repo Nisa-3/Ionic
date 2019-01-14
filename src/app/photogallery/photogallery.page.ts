@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Griddata } from './photogallery';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { PhotoViewer  } from '@ionic-native/photo-viewer/ngx';
+
 
 @Component({
   selector: 'app-photogallery',
@@ -9,8 +11,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 })
 export class PhotogalleryPage implements OnInit {
   ImageGallery = Griddata[0].UserRelated;
-  constructor(private camera: Camera) { }
   photo: any;
+  constructor(private camera: Camera, private photoViewer: PhotoViewer) { }
+
   ngOnInit() {
   }
   CaptureImage() {
@@ -29,5 +32,11 @@ export class PhotogalleryPage implements OnInit {
     });
 
   }
+  show(event) {
+    console.log(event);
+     this.photoViewer.show(event);
+     // this.photoViewer.show('https://www.elegantthemes.com/blog/wp-content/uploads/2015/02/custom-trackable-short-url-feature.png');
+      }
+
 
 }
